@@ -13,10 +13,9 @@ import {
     import useAuth from "../hooks/useAuth";
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
-    import { FaToggleOff, FaToggleOn } from "react-icons/fa";
     import { EditIcon } from '@chakra-ui/icons'
     import { BsTrash } from "react-icons/bs";
-    import { deleteTodo, toggleTodoStatus } from "../api/todo";
+    import { deleteTodo } from "../api/todo";
 
     const TodoList = () => {
         const [todos, setTodos] = React.useState([]);
@@ -77,7 +76,7 @@ import {
                         bg="white"
                     >
                     <Heading as="h3" fontSize={"xl"}>
-                    <LinkOverlay href={`/todo/${todo.id}`}>{todo.title}{" "}</LinkOverlay>
+                    <LinkOverlay href={`/todo/${todo.id}`} ml="6px">{todo.title}{" "}</LinkOverlay>
                          <Badge
                             float="left"
                             mt="3px"
@@ -123,7 +122,7 @@ import {
                             {todo.status}
                         </Badge> */}
                     </Heading>
-                    <Text ml="25px">{todo.description}</Text>
+                    <Text ml="30px">{todo.description}</Text>
                 </Box>
                 </LinkBox>
                 ))}

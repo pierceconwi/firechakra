@@ -13,6 +13,7 @@ import {
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
     import { BsTrash } from "react-icons/bs";
+    import { CalendarIcon } from '@chakra-ui/icons'
     import { deleteEvent } from "../api/events";
 
     const EventList = () => {
@@ -74,7 +75,16 @@ import {
                         bg="white"
                     >
                     <Heading as="h3" fontSize={"xl"}>
-                    <LinkOverlay href={`/event/${event.id}`}>{event.title}{" "}</LinkOverlay>
+                    <LinkOverlay href={`/event/${event.id}`} ml="6px">{event.title}{" "}</LinkOverlay>
+                    <Badge
+                        float="left"
+                         mt="3px"
+                    >
+                    <CalendarIcon 
+                        w="15px"
+                        h="15px"
+                    />
+                    </Badge>
                         <Badge
                             color="gray.400"
                             bg="inherit"
@@ -90,7 +100,7 @@ import {
                             <BsTrash />
                         </Badge>
                     </Heading>
-                    <Text>{event.description}</Text>
+                    <Text ml="30px">{event.description}</Text>
                 </Box>
                 </LinkBox>
                 ))}

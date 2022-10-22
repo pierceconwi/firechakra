@@ -12,6 +12,7 @@ import {
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../firebase";
 import { BsTrash } from "react-icons/bs";
+import { AtSignIcon } from '@chakra-ui/icons'
 import useAuth from "../hooks/useAuth";
 import { deleteComment } from "../api/comments";
 
@@ -101,7 +102,17 @@ const CommentList = () => {
                                 bg="white"
                             >
                                 <Heading as="h3" fontSize={"xl"}>
-                                    <LinkOverlay href={`/comment/${comment.id}`}>{comment.title}</LinkOverlay>
+                                    <LinkOverlay href={`/comment/${comment.id}`} ml="6px">{comment.title}</LinkOverlay>
+                                    <Badge
+                                        float="left"
+                                        mt="3px"
+                                        mr="1px"
+                                    >
+                                        <AtSignIcon
+                                            w="15px"
+                                            h="15px"
+                                        />
+                                    </Badge>
                                     {" "}
                                     <Badge
                                         color="gray.400"
@@ -118,13 +129,13 @@ const CommentList = () => {
                                         <BsTrash />
                                     </Badge>
                             </Heading>
-                            <Text>
+                            <Text ml="30px">
                                 { comment.comment }
                             </Text>
-                            <Text>
+                            <Text ml="30px">
                                 { comment.phone }
                             </Text>
-                            <Text>
+                            <Text ml="30px">
                                 { comment.email }
                             </Text>
                         </Box>

@@ -4,8 +4,10 @@ import Auth from "../../components/Auth";
 import {
     Box,
     Heading,
-    Text
+    Text,
+    Badge
 } from "@chakra-ui/react";
+import { CalendarIcon } from '@chakra-ui/icons'
 import {
     doc,
     getDoc
@@ -27,6 +29,12 @@ const EventItem = ( {itemData} ) => {
             <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
+                    <Badge>
+                        <CalendarIcon 
+                            w="15px"
+                            h="15px"
+                        />
+                    </Badge> 
                     Title: { itemData.title }
                 </Heading>
                 <Text>
