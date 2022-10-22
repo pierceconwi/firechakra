@@ -6,13 +6,15 @@ import {
     Text,
     useToast,
     LinkBox,
-    LinkOverlay
+    LinkOverlay,
+    Image
     } from "@chakra-ui/react";
     import React, { useEffect } from "react";
     import useAuth from "../hooks/useAuth";
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
     import { FaToggleOff, FaToggleOn } from "react-icons/fa";
+    import { EditIcon } from '@chakra-ui/icons'
     import { BsTrash } from "react-icons/bs";
     import { deleteTodo, toggleTodoStatus } from "../api/todo";
 
@@ -49,14 +51,14 @@ import {
             }
         };
         
-        const handleToggle = async (id, status) => {
+/*         const handleToggle = async (id, status) => {
             const newStatus = status == "completed" ? "pending" : "completed";
             await toggleTodoStatus({ docId: id, status: newStatus });
             toast({
                 title: `Todo marked ${newStatus}`,
                 status: newStatus == "completed" ? "success" : "warning",
             });
-        };
+        }; */
         
         return (
             <Box mt={5}>
@@ -76,6 +78,15 @@ import {
                     >
                     <Heading as="h3" fontSize={"xl"}>
                     <LinkOverlay href={`/todo/${todo.id}`}>{todo.title}{" "}</LinkOverlay>
+                         <Badge
+                            float="left"
+                            mt="3px"
+                        >
+                            <EditIcon 
+                            w="15px"
+                            h="15px"
+                            />
+                        </Badge> 
                         <Badge
                             color="gray.400"
                             bg="inherit"
@@ -90,7 +101,7 @@ import {
                             >
                             <BsTrash />
                         </Badge>
-                        <Badge
+{/*                         <Badge
                             color={todo.status == "pending" ? "gray.500" : "green.500"}
                             bg="inherit"
                             transition={"0.2s"}
@@ -110,9 +121,9 @@ import {
                             bg={todo.status == "pending" ? "yellow.500" : "green.500"}
                             >
                             {todo.status}
-                        </Badge>
+                        </Badge> */}
                     </Heading>
-                    <Text>{todo.description}</Text>
+                    <Text ml="25px">{todo.description}</Text>
                 </Box>
                 </LinkBox>
                 ))}
