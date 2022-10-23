@@ -79,9 +79,9 @@ const ContactItem = ( {itemData} ) => {
     // if code hits here, user is logged in
     // return the jsx component
     return (
-        <Box>
-            <Auth />
-            <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
+        <Box ml="3%" mr="3%">
+            <Auth/>
+            <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
                     <Badge>
@@ -89,7 +89,7 @@ const ContactItem = ( {itemData} ) => {
                             w="15px"
                             h="15px"
                         />
-                    </Badge> 
+                    </Badge>
                     Title: { itemData.title }
                 </Heading>
                 <Text>
@@ -107,7 +107,7 @@ const ContactItem = ( {itemData} ) => {
             <Accordion ml="25%" mr="25%">
                 <AccordionItem>
                 <AccordionButton>
-                    <Center  h="50px" w="600px">
+                    <Center  h={["50px"]} w={["8000px"]}>
                         {/* <Heading fontSize="xl">Edit Contact</Heading> */}
                         <Button bg="cyan.300" borderRadius="md" boxShadow="base">Edit Contact</Button>
                     </Center>

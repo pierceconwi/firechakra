@@ -6,8 +6,7 @@ import {
     Text,
     useToast,
     LinkBox,
-    LinkOverlay,
-    Image
+    LinkOverlay
     } from "@chakra-ui/react";
     import React, { useEffect } from "react";
     import useAuth from "../hooks/useAuth";

@@ -1,13 +1,18 @@
 import React from "react";
-import { Box, Button, Link, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Badge, Center, Link, Text, Menu, MenuButton, MenuList, MenuItem, useColorMode } from "@chakra-ui/react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FaGoogle, FaMoon, FaSun } from "react-icons/fa";
+import {ChevronDownIcon } from "react-icons";
 import { auth } from "../firebase";
 import useAuth from "../hooks/useAuth";
 
 const Auth = () => {
-    const { toggleColorMode, colorMode } = useColorMode();
     const { isLoggedIn, user } = useAuth() || {};
+    // function for Logout button to log user out and then send them back to the home screen (prevents user from sitting on a protected page after logout)
+    const byeBye = () => {
+        auth.signOut();
+        location.assign('/');
+    };
 
     const handleAuth = async () => {
         const provider = new GoogleAuthProvider();
@@ -33,38 +38,46 @@ const Auth = () => {
     };
     // define jsx component to return
     return (
-        <Box display="flex" alignItems="center" justifyContent="space-between" ml="5%" mr="5%" mt="20px">
-            <Button onClick={() => toggleColorMode()}>
-                    {colorMode == "dark" ? <FaSun /> : <FaMoon />}
-            </Button>{" "}
+        <Box display="flex" alignItems="center" justifyContent="space-between" mt="20px"  ml="3%" mr="3%">
             <Box>
-                <Link href="/" >Home</Link>
+                <Button variant="outline" id="home">
+                    <Link href="/" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Home</Link>
+                </Button>
             </Box>
             <Box>
-                <Link href="/add-todo">Add Task</Link>
+                <Button variant="outline" id="task">
+                    <Link href="/add-todo" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Task</Link>
+                </Button>
             </Box>
             <Box>
-                <Link href="/add-event">Add Event</Link>
+                <Button variant="outline" id="event">
+                    <Link href="/add-event" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Event</Link>
+                </Button>
             </Box>
             <Box>
-                <Link href="/add-comment">Add Contact</Link>
+                <Button variant="outline" id="contact">
+                    <Link href="/add-comment" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Contact</Link>
+                </Button>
             </Box>
-            <Box textAlign="right" w="20%">
+            <Box>
                 {isLoggedIn && (
                     <>
-                        <Text fontSize="xs" color="green.500">{user.email}</Text>
-                        <Link color="red.500" onClick={() => auth.signOut()}>
+                        {/* <Badge display="flex"><Text fontSize="xs" color="green.500">{user.email}</Text></Badge> */}
+                        <Center>
+                        <Link color="red.500" onClick={() => byeBye()} ><Button colorScheme="green" mr="5%">
                             Logout
-                        </Link>
+                        </Button></Link>
+                        </Center>
                     </>
                 )}
                 {!isLoggedIn && (
-                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()}>
-                        Login with Google
+                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%">
+                        Login
                     </Button>
                 )}
             </Box>
         </Box>
+        
     );
 };
 export default Auth;

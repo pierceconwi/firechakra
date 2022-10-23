@@ -24,7 +24,7 @@ const EventItem = ( {itemData} ) => {
     // if code hits here, user is logged in
     // return the jsx component
     return (
-        <Box>
+        <Box ml="3%" mr="3%">
             <Auth />
             <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
                 <br />

@@ -7,6 +7,7 @@ Button,
 Textarea,
 Stack,
 useToast,
+Center
 } from "@chakra-ui/react";
 // import useAuth to ensure user is logged in to comment
 import useAuth from "../hooks/useAuth";
@@ -74,7 +75,7 @@ const AddComment = () => {
     };
     // return markup for comment jsx component
     return (
-        <Box w="40%" margin={"0 auto"} display="block" mt={5} >
+        <Box w={["100%", null, "40%"]} margin={"0 auto"} display="block"  mt={5}>
             <Stack direction="column">
                 <Input 
                     placeholder="Name"
