@@ -86,7 +86,7 @@ const CommentList = () => {
     return (
         <Box mt={5}>
             <h2>Contacts</h2>
-            <SimpleGrid columns={{ base: 1, md: 3}} spacing={8}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                 {
                     comments && 
                     comments.map(

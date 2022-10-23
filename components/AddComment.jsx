@@ -6,8 +6,7 @@ Input,
 Button,
 Textarea,
 Stack,
-useToast,
-Center
+useToast
 } from "@chakra-ui/react";
 // import useAuth to ensure user is logged in to comment
 import useAuth from "../hooks/useAuth";

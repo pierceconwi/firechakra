@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Button, Badge, Center, Link, Text, Menu, MenuButton, MenuList, MenuItem, useColorMode } from "@chakra-ui/react";
+import { Box, Button, Center, Link } from "@chakra-ui/react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { FaGoogle, FaMoon, FaSun } from "react-icons/fa";
-import {ChevronDownIcon } from "react-icons";
+import { FaGoogle } from "react-icons/fa";
 import { auth } from "../firebase";
 import useAuth from "../hooks/useAuth";
 

@@ -43,7 +43,7 @@ const AddTodo = () => {
         toast({ title: "Todo created successfully", status: "success" });
     };
     return (
-        <Box w="40%" margin={"0 auto"} display="block" mt={5} mb={5}>
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" mt={5} mb={5}>
             <Stack direction="column">
                 <Input
                     placeholder="Title"
