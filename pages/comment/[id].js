@@ -81,7 +81,7 @@ const ContactItem = ( {itemData} ) => {
     return (
         <Box ml="3%" mr="3%">
             <Auth/>
-            <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>
+            <Box w={["80%", "300px", "750px", "940px", ]} mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
                     <Badge>

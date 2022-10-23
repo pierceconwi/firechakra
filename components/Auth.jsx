@@ -41,22 +41,22 @@ const Auth = () => {
         <Box display="flex" alignItems="center" justifyContent="space-between" mt="20px"  ml="3%" mr="3%">
             <Box>
                 <Button variant="outline" id="home">
-                    <Link href="/" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Home</Link>
+                    <Link href="/" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Home</Link>
                 </Button>
             </Box>
             <Box>
                 <Button variant="outline" id="task">
-                    <Link href="/add-todo" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Task</Link>
+                    <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Task</Link>
                 </Button>
             </Box>
             <Box>
                 <Button variant="outline" id="event">
-                    <Link href="/add-event" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Event</Link>
+                    <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Event</Link>
                 </Button>
             </Box>
             <Box>
                 <Button variant="outline" id="contact">
-                    <Link href="/add-comment" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>Add Contact</Link>
+                    <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Contact</Link>
                 </Button>
             </Box>
             <Box>
