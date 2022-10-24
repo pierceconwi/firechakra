@@ -107,7 +107,6 @@ const ContactItem = ( {itemData} ) => {
                 <AccordionItem>
                 <AccordionButton>
                     <Center  h={["50px"]} w={["8000px"]}>
-                        {/* <Heading fontSize="xl">Edit Contact</Heading> */}
                         <Button bg="cyan.300" borderRadius="md" boxShadow="base">Edit Contact</Button>
                     </Center>
                 </AccordionButton>

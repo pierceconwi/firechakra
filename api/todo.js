@@ -56,4 +56,22 @@ try {
 }
 };
 
-export { addTodo, toggleTodoStatus, deleteTodo };
+const editTodo = async ( { title, description, status, id } ) => {
+    try {
+        console.log("editTodo triggered. doc id: "+id);
+        const docref = doc( db, "todo", id );
+        if ( !docref.empty ) {
+            await updateDoc(docref, 
+                {
+                    title: title,
+                    description: description,
+                    status: status
+                }
+            );
+        }
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+export { addTodo, toggleTodoStatus, deleteTodo, editTodo };

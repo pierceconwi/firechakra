@@ -5,7 +5,8 @@ import {
     collection,
     addDoc,
     doc,
-    deleteDoc
+    deleteDoc,
+    updateDoc
 } from "firebase/firestore";
 
 // create arrow function which adds new comment
@@ -30,15 +31,32 @@ const addEvent = async ( { userId, title, description } ) => {
 
 };
 
+const editEvent = async ( { title, description, id } ) => {
+    try {
+        console.log("editEvent triggered. doc id: "+id);
+        const docref = doc( db, "events", id );
+        if ( !docref.empty ) {
+            await updateDoc(docref, 
+                {
+                    title: title,
+                    description: description
+                }
+            );
+        }
+    } catch(err) {
+        console.log(err);
+    }
+}
+
 // async arrow function to delete existing comments
 const deleteEvent = async ( docId ) => {
     try {
         // grab reference to existing firestore document via id
-        const commentRef = doc( db, "events", docId );
-        await deleteDoc( commentRef );
+        const eventRef = doc( db, "events", docId );
+        await deleteDoc( eventRef );
     } catch(err) {
         console.log(err);
     }
 };
 
-export { addEvent, deleteEvent };
+export { addEvent, editEvent, deleteEvent };
