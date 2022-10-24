@@ -88,64 +88,64 @@ const CommentList = () => {
             <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.6em', '1.8em']}>
                 Contacts
             </Heading>
-                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-                    {
-                        comments && 
-                        comments.map(
-                            (comment) => (
-                                <LinkBox key={comment.id}>
-                                <Box
-                                    p={3}
-                                    boxShadow="2xl"
-                                    shadow={"dark-lg"}
-                                    transition="0.2s"
-                                    _hover={{ boxShadow: "sm" }}
-                                    borderRadius="md"
-                                    bg="white"
-                                >
-                                    <Heading as="h3" fontSize={"xl"}>
-                                        <LinkOverlay href={`/comment/${comment.id}`} ml="6px">{comment.title}</LinkOverlay>
-                                        <Badge
-                                            float="left"
-                                            mt="3px"
-                                            mr="1px"
-                                        >
-                                            <AtSignIcon
-                                                w="15px"
-                                                h="15px"
-                                            />
-                                        </Badge>
-                                        {" "}
-                                        <Badge
-                                            color="gray.400"
-                                            bg="inherit"
-                                            transition={"0.2s"}
-                                            _hover={{
-                                                bg: "inherit",
-                                                transform: "scale(1.2)",
-                                            }}
-                                            float="right"
-                                            size="xs"
-                                            onClick={ () => handleCommentDelete(comment.id) }
-                                        >
-                                            <BsTrash />
-                                        </Badge>
-                                </Heading>
-                                <Text ml="30px">
-                                    { comment.comment }
-                                </Text>
-                                <Text ml="30px">
-                                    { comment.phone }
-                                </Text>
-                                <Text ml="30px">
-                                    { comment.email }
-                                </Text>
-                            </Box>
-                            </LinkBox>
-                            )
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+                {
+                    comments && 
+                    comments.map(
+                        (comment) => (
+                            <LinkBox key={comment.id}>
+                            <Box
+                                p={3}
+                                boxShadow="2xl"
+                                shadow={"dark-lg"}
+                                transition="0.2s"
+                                _hover={{ boxShadow: "sm" }}
+                                borderRadius="md"
+                                bg="white"
+                            >
+                                <Heading as="h3" fontSize={"xl"}>
+                                    <LinkOverlay href={`/comment/${comment.id}`} ml="6px">{comment.title}</LinkOverlay>
+                                    <Badge
+                                        float="left"
+                                        mt="3px"
+                                        mr="1px"
+                                    >
+                                        <AtSignIcon
+                                            w="15px"
+                                            h="15px"
+                                        />
+                                    </Badge>
+                                    {" "}
+                                    <Badge
+                                        color="gray.400"
+                                        bg="inherit"
+                                        transition={"0.2s"}
+                                        _hover={{
+                                            bg: "inherit",
+                                            transform: "scale(1.2)",
+                                        }}
+                                        float="right"
+                                        size="xs"
+                                        onClick={ () => handleCommentDelete(comment.id) }
+                                    >
+                                        <BsTrash />
+                                    </Badge>
+                            </Heading>
+                            <Text ml="30px">
+                                { comment.comment }
+                            </Text>
+                            <Text ml="30px">
+                                { comment.phone }
+                            </Text>
+                            <Text ml="30px">
+                                { comment.email }
+                            </Text>
+                        </Box>
+                        </LinkBox>
                         )
-                    }
-                </SimpleGrid>
+                    )
+                }
+            </SimpleGrid>
             <br />
         </Box>
     );

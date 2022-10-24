@@ -60,51 +60,51 @@ import {
         
         return (
             <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-            <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.6em', '1.8em']}>Events</Heading>
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
-                {events &&
-                events.map((event) => (
-                    <LinkBox key={event.id}>
-                    <Box
-                        p={3}
-                        boxShadow="2xl"
-                        shadow={"dark-lg"}
-                        transition="0.2s"
-                        _hover={{ boxShadow: "sm" }}
-                        borderRadius="md"
-                        bg="white"
-                    >
-                    <Heading as="h3" fontSize={"xl"}>
-                    <LinkOverlay href={`/event/${event.id}`} ml="6px">{event.title}{" "}</LinkOverlay>
-                    <Badge
-                        float="left"
-                         mt="3px"
-                    >
-                    <CalendarIcon 
-                        w="15px"
-                        h="15px"
-                    />
-                    </Badge>
+                <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.6em', '1.8em']}>Events</Heading>
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
+                    {events &&
+                    events.map((event) => (
+                        <LinkBox key={event.id}>
+                        <Box
+                            p={3}
+                            boxShadow="2xl"
+                            shadow={"dark-lg"}
+                            transition="0.2s"
+                            _hover={{ boxShadow: "sm" }}
+                            borderRadius="md"
+                            bg="white"
+                        >
+                        <Heading as="h3" fontSize={"xl"}>
+                        <LinkOverlay href={`/event/${event.id}`} ml="6px">{event.title}{" "}</LinkOverlay>
                         <Badge
-                            color="gray.400"
-                            bg="inherit"
-                            transition={"0.2s"}
-                            _hover={{
-                                bg: "inherit",
-                                transform: "scale(1.2)",
-                            }}
-                            float="right"
-                            size="xs"
-                            onClick={() => handleEventDelete(event.id)}
-                            >
-                            <BsTrash />
+                            float="left"
+                            mt="3px"
+                        >
+                        <CalendarIcon 
+                            w="15px"
+                            h="15px"
+                        />
                         </Badge>
-                    </Heading>
-                    <Text ml="30px">{event.description}</Text>
-                </Box>
-                </LinkBox>
-                ))}
-            </SimpleGrid>
+                            <Badge
+                                color="gray.400"
+                                bg="inherit"
+                                transition={"0.2s"}
+                                _hover={{
+                                    bg: "inherit",
+                                    transform: "scale(1.2)",
+                                }}
+                                float="right"
+                                size="xs"
+                                onClick={() => handleEventDelete(event.id)}
+                                >
+                                <BsTrash />
+                            </Badge>
+                        </Heading>
+                        <Text ml="30px">{event.description}</Text>
+                    </Box>
+                    </LinkBox>
+                    ))}
+                </SimpleGrid>
             </Box>
         );
 };

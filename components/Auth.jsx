@@ -64,7 +64,7 @@ const Auth = () => {
                     <>
                         <Center>
                         <Link color="red.500" onClick={() => byeBye()} >
-                            <Button colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'lg', 'lg']}>
+                            <Button colorScheme="red" mr="5%" size={['xs', 'sm', 'md', 'lg', 'lg']}>
                             Logout
                             </Button>
                         </Link>
