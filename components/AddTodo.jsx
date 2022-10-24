@@ -40,7 +40,14 @@ const AddTodo = () => {
         setTitle("");
         setDescription("");
         setStatus("pending");
-        toast({ title: "Todo created successfully", status: "success" });
+        toast(
+            { 
+                title: "Task created successfully. Redirecting to list...", 
+                status: "success" 
+            }
+        );
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
     };
     return (
         <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" mt={5} mb={5}>

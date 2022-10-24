@@ -67,10 +67,12 @@ const AddComment = () => {
         // show toast notification with status update
         toast(
             {
-                title: "Contact saved successfully.",
+                title: "Contact saved successfully. Redirecting to list...",
                 status: "success"
             }
         );
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
     };
     // return markup for comment jsx component
     return (

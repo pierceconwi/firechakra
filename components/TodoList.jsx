@@ -49,15 +49,6 @@ import {
             }
         };
         
-/*         const handleToggle = async (id, status) => {
-            const newStatus = status == "completed" ? "pending" : "completed";
-            await toggleTodoStatus({ docId: id, status: newStatus });
-            toast({
-                title: `Todo marked ${newStatus}`,
-                status: newStatus == "completed" ? "success" : "warning",
-            });
-        }; */
-        
         return (
             <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
                     <Heading fontSize={['1.4em', '1.4em', '1.4em', '1.6em', '1.8em']}>Tasks</Heading>
@@ -99,27 +90,6 @@ import {
                             >
                             <BsTrash />
                         </Badge>
-{/*                         <Badge
-                            color={todo.status == "pending" ? "gray.500" : "green.500"}
-                            bg="inherit"
-                            transition={"0.2s"}
-                            _hover={{
-                                bg: "inherit",
-                                transform: "scale(1.2)",
-                            }}
-                            float="right"
-                            size="xs"
-                            onClick={() => handleToggle(todo.id, todo.status)}
-                        >
-                            {todo.status == "pending" ? <FaToggleOff /> : <FaToggleOn />}
-                        </Badge>
-                        <Badge
-                            float="right"
-                            opacity="0.8"
-                            bg={todo.status == "pending" ? "yellow.500" : "green.500"}
-                            >
-                            {todo.status}
-                        </Badge> */}
                     </Heading>
                     <Text ml="30px" fontSize={['1em', '1em', '1em', '1.2em', '1em']}>{todo.description}</Text>
                 </Box>

@@ -62,10 +62,12 @@ const AddEvent = () => {
         // show toast notification with status update
         toast(
             {
-                title: "Event posted successfully.",
+                title: "Event posted successfully. Redirecting to list...",
                 status: "success"
             }
         );
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
     };
     // return markup for event jsx component
     return (
