@@ -23,7 +23,7 @@ import {
     getDoc
 } from "firebase/firestore";
 import { db } from "../../firebase/index";
-import { editComment } from "../../api/comments";
+import { editComment, deleteComment } from "../../api/comments";
 
 // define jsx component to show a single todo entry
 const ContactItem = ( {itemData} ) => {
@@ -71,6 +71,15 @@ const ContactItem = ( {itemData} ) => {
         window.location.reload();
     };
 
+    // handle Contact delete
+    const handleContactDelete = async (id) => {
+        if (confirm("Are you sure you want to delete this contact?")) {
+            deleteComment(id);
+            toast({ title: "Contact deleted successfully. Returning to Home...", status: "success" });
+        }
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
+    };
 
     if (!user) {
         return;
@@ -80,7 +89,7 @@ const ContactItem = ( {itemData} ) => {
     return (
         <Box ml="3%" mr="3%">
             <Auth/>
-            <Box w={["80%", "300px", "750px", "940px", ]} mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white" fontSize={['1em', '1.2em', '1.4em', '1.6em', '1.8em']}>
+            <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
                     <Badge>
@@ -146,6 +155,15 @@ const ContactItem = ( {itemData} ) => {
         </AccordionPanel>
         </AccordionItem>
         </Accordion>
+        <Center>
+            <Button
+                    onClick={ () => handleContactDelete(itemData.id) } 
+                    bg="red.500"
+                    color="white"
+                    mt="15px"
+                    variant="solid"
+                >Delete Contact</Button>
+            </Center>
         </Box>
     );
 };

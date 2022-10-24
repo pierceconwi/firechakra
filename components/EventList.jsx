@@ -12,7 +12,6 @@ import {
     import useAuth from "../hooks/useAuth";
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
-    import { BsTrash } from "react-icons/bs";
     import { CalendarIcon } from '@chakra-ui/icons'
     import { deleteEvent } from "../api/events";
 
@@ -85,20 +84,6 @@ import {
                             h="15px"
                         />
                         </Badge>
-                            <Badge
-                                color="gray.400"
-                                bg="inherit"
-                                transition={"0.2s"}
-                                _hover={{
-                                    bg: "inherit",
-                                    transform: "scale(1.2)",
-                                }}
-                                float="right"
-                                size="xs"
-                                onClick={() => handleEventDelete(event.id)}
-                                >
-                                <BsTrash />
-                            </Badge>
                         </Heading>
                         <Text ml="30px">{event.description}</Text>
                     </Box>

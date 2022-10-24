@@ -23,7 +23,7 @@ import {
     getDoc
 } from "firebase/firestore";
 import { db } from "../../firebase/index";
-import { editEvent } from "../../api/events";
+import { editEvent, deleteEvent } from "../../api/events";
 
 // define jsx component to show a single todo entry
 const EventItem = ( {itemData} ) => {
@@ -36,7 +36,6 @@ const EventItem = ( {itemData} ) => {
     const toast = useToast();
     // enforce login: should get a useAuth, otherwise user doesnt exist
     const { user } = useAuth() || {};
-
 
     // define function to handle edit contact operation
     const handleEventEdit = async () => {
@@ -64,6 +63,16 @@ const EventItem = ( {itemData} ) => {
         );
         await new Promise(r => setTimeout(r, 1500));
         window.location.reload();
+    };
+
+    // handle Event delete
+    const handleEventDelete = async (id) => {
+        if (confirm("Are you sure you want to delete this event?")) {
+            deleteEvent(id);
+            toast({ title: "Event deleted successfully. Returning to Home...", status: "success" });
+        }
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
     };
 
     if (!user) {
@@ -123,6 +132,15 @@ const EventItem = ( {itemData} ) => {
         </AccordionPanel>
         </AccordionItem>
         </Accordion>
+        <Center>
+            <Button
+                    onClick={ () => handleEventDelete(itemData.id) } 
+                    bg="red.500"
+                    color="white"
+                    mt="15px"
+                    variant="solid"
+                >Delete Event</Button>
+            </Center>
         </Box>
     );
 };

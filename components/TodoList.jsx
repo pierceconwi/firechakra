@@ -13,7 +13,6 @@ import {
     import { collection, onSnapshot, query, where } from "firebase/firestore";
     import { db } from "../firebase";
     import { EditIcon } from '@chakra-ui/icons'
-    import { BsTrash } from "react-icons/bs";
     import { deleteTodo } from "../api/todo";
 
     const TodoList = () => {
@@ -43,9 +42,9 @@ import {
         );
 
         const handleTodoDelete = async (id) => {
-            if (confirm("Are you sure you wanna delete this todo?")) {
+            if (confirm("Are you sure you wanna delete this task?")) {
                 deleteTodo(id);
-                toast({ title: "Todo deleted successfully", status: "success" });
+                toast({ title: "Task deleted successfully", status: "success" });
             }
         };
         
@@ -76,22 +75,8 @@ import {
                                 h="15px"
                                 />
                             </Badge> 
-                            <Badge
-                                color="gray.400"
-                                bg="inherit"
-                                transition={"0.2s"}
-                                _hover={{
-                                    bg: "inherit",
-                                    transform: "scale(1.2)",
-                                }}
-                                float="right"
-                                size="xs"
-                                onClick={() => handleTodoDelete(todo.id)}
-                                >
-                                <BsTrash />
-                            </Badge>
                         </Heading>
-                        <Text ml="30px" fontSize={['1em', '1em', '1em', '1.2em', '1em']}>{todo.description}</Text>
+                        <Text  ml="30px">{todo.description}</Text>
                     </Box>
                     </LinkBox>
                     ))}

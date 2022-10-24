@@ -24,7 +24,7 @@ import {
     getDoc
 } from "firebase/firestore";
 import { db } from "../../firebase/index";
-import { editTodo } from "../../api/todo";
+import { editTodo, deleteTodo } from "../../api/todo";
 
 // define jsx component to show a single todo entry
 const TodoItem = ( {itemData} ) => {
@@ -40,7 +40,6 @@ const TodoItem = ( {itemData} ) => {
 
     // define function to handle edit task operation
     const handleTodoEdit = async () => {
-        // if user is logged in, this code runs instead of above:
         setIsLoading(true);
         // build object value template
         const todoData = {
@@ -65,6 +64,16 @@ const TodoItem = ( {itemData} ) => {
         );
         await new Promise(r => setTimeout(r, 1500));
         window.location.reload();
+    };
+
+    // handle Task delete
+    const handleTodoDelete = async (id) => {
+        if (confirm("Are you sure you want to delete this task?")) {
+            deleteTodo(id);
+            toast({ title: "Task deleted successfully. Returning to Home...", status: "success" });
+        }
+        await new Promise(r => setTimeout(r, 1500));
+        window.location.assign("/");
     };
 
     if (!user) {
@@ -98,7 +107,7 @@ const TodoItem = ( {itemData} ) => {
                 <AccordionItem>
                 <AccordionButton>
                     <Center  h={["50px"]} w={["8000px"]}>
-                        <Button bg="cyan.300" borderRadius="md" boxShadow="base">Edit Event</Button>
+                        <Button bg="cyan.300" borderRadius="md" boxShadow="base">Edit Task</Button>
                     </Center>
                 </AccordionButton>
                 <AccordionPanel>
@@ -141,6 +150,15 @@ const TodoItem = ( {itemData} ) => {
         </AccordionPanel>
         </AccordionItem>
         </Accordion>
+        <Center>
+            <Button
+                    onClick={ () => handleTodoDelete(itemData.id) } 
+                    bg="red.500"
+                    color="white"
+                    mt="15px"
+                    variant="solid"
+                >Delete Task</Button>
+            </Center>
         </Box>
     );
 };

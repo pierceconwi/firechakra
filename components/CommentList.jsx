@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { db } from "../firebase";
-import { BsTrash } from "react-icons/bs";
 import { AtSignIcon } from '@chakra-ui/icons'
 import useAuth from "../hooks/useAuth";
 import { deleteComment } from "../api/comments";
@@ -114,21 +113,6 @@ const CommentList = () => {
                                             w="15px"
                                             h="15px"
                                         />
-                                    </Badge>
-                                    {" "}
-                                    <Badge
-                                        color="gray.400"
-                                        bg="inherit"
-                                        transition={"0.2s"}
-                                        _hover={{
-                                            bg: "inherit",
-                                            transform: "scale(1.2)",
-                                        }}
-                                        float="right"
-                                        size="xs"
-                                        onClick={ () => handleCommentDelete(comment.id) }
-                                    >
-                                        <BsTrash />
                                     </Badge>
                             </Heading>
                             <Text ml="30px">
