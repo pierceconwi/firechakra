@@ -59,8 +59,8 @@ import {
         };
         
         return (
-            <Box mt={5}>
-            <h2>Events</h2>
+            <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+            <Heading>Events</Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                 {events &&
                 events.map((event) => (

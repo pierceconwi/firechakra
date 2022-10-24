@@ -37,46 +37,48 @@ const Auth = () => {
     };
     // define jsx component to return
     return (
-        <Box display="flex" alignItems="center" justifyContent="space-between" mt="20px"  ml="3%" mr="3%">
+        <Center>
+        <Box display="flex" alignItems="center" justifyContent="space-between" mt="20px"  ml="3%" mr="3%" >
             <Box>
-                <Button variant="outline" id="home">
+                <Button variant="outline" id="home" className="navbutton" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                     <Link href="/" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Home</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="task">
+                <Button variant="outline" id="task" className="navbutton" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                     <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Task</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="event">
+                <Button variant="outline" id="event" className="navbutton" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                     <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Event</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="contact">
+                <Button variant="outline" id="contact" className="navbutton" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                     <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Contact</Link>
                 </Button>
             </Box>
             <Box>
                 {isLoggedIn && (
                     <>
-                        {/* <Badge display="flex"><Text fontSize="xs" color="green.500">{user.email}</Text></Badge> */}
                         <Center>
-                        <Link color="red.500" onClick={() => byeBye()} ><Button colorScheme="green" mr="5%">
+                        <Link color="red.500" onClick={() => byeBye()} >
+                            <Button colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                             Logout
-                        </Button></Link>
+                            </Button>
+                        </Link>
                         </Center>
                     </>
                 )}
                 {!isLoggedIn && (
-                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%">
+                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'lg', 'xl']}>
                         Login
                     </Button>
                 )}
             </Box>
         </Box>
-        
+        </Center>
     );
 };
 export default Auth;

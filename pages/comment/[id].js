@@ -39,7 +39,6 @@ const ContactItem = ( {itemData} ) => {
     // enforce login: should get a useAuth, otherwise user doesnt exist
     const { user } = useAuth() || {};
 
-
     // define function to handle edit contact operation
     const handleCommentEdit = async () => {
         // if user is logged in, this code runs instead of above:
@@ -151,8 +150,6 @@ const ContactItem = ( {itemData} ) => {
         </Box>
     );
 };
-
-
 
 // define required getServerSideProps() func that Next will call
 // dynamically routed url: /todo/x (where x is the id)

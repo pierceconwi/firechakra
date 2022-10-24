@@ -1,4 +1,4 @@
-import { Container, Spacer } from "@chakra-ui/react";
+import { Container, Center } from "@chakra-ui/react";
 import Auth from "../components/Auth";
 import TodoList from "../components/TodoList";
 import CommentList from "../components/CommentList";

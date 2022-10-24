@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "NanumGothic";
+  src: url("../pages/files/NanumGothic-Regular.ttf");
+}
+
+@font-face {
+  font-family: "NanumGothicBold";
+  src: url("../pages/files/NanumGothic-Bold.ttf");
+}
+
+@font-face {
+  font-family: "NanumGothicExtraBold";
+  src: url("../pages/files/NanumGothic-ExtraBold.ttf");
+}
+
 html,
 body {
   padding: 0;
@@ -9,6 +24,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: NanumGothicBold;
 }
 
 * {

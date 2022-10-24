@@ -59,8 +59,8 @@ import {
         }; */
         
         return (
-            <Box mt={5}>
-            <h2>Tasks</h2>
+            <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+                    <Heading>Tasks</Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                 {todos &&
                 todos.map((todo) => (

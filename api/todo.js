@@ -9,8 +9,6 @@ import {
     deleteDoc
 } from "firebase/firestore";
 
-
-
 // create arrow function 
 const addTodo = async ( { userId, title, description, status } ) => {
     try {
