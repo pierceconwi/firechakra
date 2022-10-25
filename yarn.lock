@@ -2837,6 +2837,11 @@
     "path-type" "^4.0.0"
     "yaml" "^1.10.0"
 
+"create-next-app@^12.3.1":
+  "integrity" "sha512-dDEO+hs++58j+OdzK9ZZi4P8OPggERiXJ+p0SQhbqHfOgVxb3g/5H++XpCM0zy0nOS+1TCGeWp7+k+DW8GRYkA=="
+  "resolved" "https://registry.npmjs.org/create-next-app/-/create-next-app-12.3.1.tgz"
+  "version" "12.3.1"
+
 "cross-spawn@^7.0.2":
   "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.3.tgz"
