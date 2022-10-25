@@ -82,7 +82,7 @@ const AddTodo = () => {
                     colorScheme="green"
                     variant="solid"
                 >
-                Add
+                Add Task
                 </Button>
             </Stack>
         </Box>
