@@ -76,7 +76,7 @@ const AddComment = () => {
     };
     // return markup for comment jsx component
     return (
-        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block"  mt={5} mb={5}>
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block"  mt={5} mb={5} maxW="100%">
             <Stack direction="column">
                 <Input 
                     placeholder="Name"
