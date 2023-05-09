@@ -83,8 +83,8 @@ const CommentList = () => {
     
     // define the jsx for the component
     return (
-        <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-            <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.4em', '1.6em']}>
+        <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+            <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>
                 Contacts
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
@@ -100,7 +100,7 @@ const CommentList = () => {
                                 transition="0.2s"
                                 _hover={{ boxShadow: "sm" }}
                                 borderRadius="md"
-                                bg="white"
+                                bg="gray.100"
                             >
                                 <Heading as="h3" fontSize={"xl"}>
                                     <LinkOverlay href={`/comment/${comment.id}`} ml="6px">{comment.title}</LinkOverlay>
@@ -115,13 +115,40 @@ const CommentList = () => {
                                         />
                                     </Badge>
                             </Heading>
-                            <Text ml="30px">
+                            <Text                            
+                                fontSize={[
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1.2rem"
+                                ]}
+                                ml="30px"
+                            >
                                 { comment.comment }
                             </Text>
-                            <Text ml="30px">
+                            <Text                             
+                                fontSize={[
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1.2rem"
+                                ]}
+                                ml="30px"
+                            >
                                 { comment.phone }
                             </Text>
-                            <Text ml="30px">
+                            <Text                         
+                                fontSize={[
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1rem",
+                                    "1.2rem"
+                                ]}
+                                ml="30px"
+                            >
                                 { comment.email }
                             </Text>
                         </Box>

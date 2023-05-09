@@ -37,7 +37,7 @@ const Auth = () => {
     };
     // define jsx component to return
     return (
-        <Container bg="red.300" border="dotted green 1px" maxW="100%">
+        <Container bg="red.300" pb="20px" border="dotted green 1px" maxW="100%">
         <Center>
         <Box display="flex" alignItems="center" justifyContent="space-between">
             <Box>

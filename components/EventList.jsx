@@ -58,8 +58,8 @@ import {
         };
         
         return (
-            <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-                <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.4em', '1.6em']}>Events</Heading>
+            <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+                <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Events</Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                     {events &&
                     events.map((event) => (
@@ -71,7 +71,7 @@ import {
                             transition="0.2s"
                             _hover={{ boxShadow: "sm" }}
                             borderRadius="md"
-                            bg="white"
+                            bg="gray.100"
                         >
                         <Heading as="h3" fontSize={"xl"}>
                         <LinkOverlay href={`/event/${event.id}`} ml="6px">{event.title}{" "}</LinkOverlay>
@@ -85,7 +85,16 @@ import {
                         />
                         </Badge>
                         </Heading>
-                        <Text ml="30px">{event.description}</Text>
+                        <Text 
+                            fontSize={[
+                                "1rem",
+                                "1rem",
+                                "1rem",
+                                "1rem",
+                                "1.2rem"
+                            ]}
+                            ml="30px"
+                        >{event.description}</Text>
                     </Box>
                     </LinkBox>
                     ))}
