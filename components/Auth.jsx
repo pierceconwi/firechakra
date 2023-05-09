@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Center, Link } from "@chakra-ui/react";
+import { Container, Box, Button, Center, Image, Link } from "@chakra-ui/react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FaGoogle } from "react-icons/fa";
 import { auth } from "../firebase";
@@ -37,34 +37,44 @@ const Auth = () => {
     };
     // define jsx component to return
     return (
+        <Container bg="red.300" minW="100%" pb="20px" border="dotted green 1px" maxW="120%" >
         <Center>
-        <Box display="flex" alignItems="center" justifyContent="space-between" mt="20px"  ml="3%" mr="3%" >
+        <Box display="flex" alignItems="center" justifyContent="space-between">
             <Box>
-                <Button variant="outline" id="home" size={['xs', 'sm', 'md', 'lg', 'lg']}>
+            <Image 
+                  borderRadius='full'
+                  boxSize='55px'
+                  src='/fc-logo.png'
+                  alt='FireChakra logo'
+                  minW="60px"
+                />
+            </Box>
+            <Box>
+                <Button variant="outline" id="home" size={['xs', 'sm', 'md', 'md', 'md']}>
                     <Link href="/" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Home</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="task" size={['xs', 'sm', 'md', 'lg', 'lg']}>
-                    <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Task</Link>
+                <Button variant="outline" id="task" size={['xs', 'sm', 'md', 'md', 'md']}>
+                    <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Task</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="event" size={['xs', 'sm', 'md', 'lg', 'lg']}>
-                    <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Event</Link>
+                <Button variant="outline" id="event" size={['xs', 'sm', 'md', 'md', 'md']}>
+                    <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Event</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="contact" size={['xs', 'sm', 'md', 'lg', 'lg']}>
-                    <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Add Contact</Link>
+                <Button variant="outline" id="contact" size={['xs', 'sm', 'md', 'md', 'md']}>
+                    <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Contact</Link>
                 </Button>
             </Box>
             <Box>
                 {isLoggedIn && (
                     <>
                         <Center>
-                        <Link color="red.500" onClick={() => byeBye()} >
-                            <Button colorScheme="red" mr="5%" size={['xs', 'sm', 'md', 'lg', 'lg']}>
+                        <Link color="red.400" onClick={() => byeBye()} >
+                            <Button colorScheme="red" mr="5%" size={['xs', 'sm', 'md', 'md', 'md']}>
                             Logout
                             </Button>
                         </Link>
@@ -72,13 +82,14 @@ const Auth = () => {
                     </>
                 )}
                 {!isLoggedIn && (
-                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'lg', 'lg']}>
+                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'md', 'md']}>
                         Login
                     </Button>
                 )}
             </Box>
         </Box>
         </Center>
+        </Container>
     );
 };
 export default Auth;

@@ -84,7 +84,7 @@ const CommentList = () => {
     // define the jsx for the component
     return (
         <Box mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-            <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.6em', '1.8em']}>
+            <Heading  mb="3px" fontSize={['1.4em', '1.4em', '1.4em', '1.4em', '1.6em']}>
                 Contacts
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>

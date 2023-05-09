@@ -27,7 +27,7 @@ const AddComment = () => {
     // chakra related:
     const toast = useToast();
 
-    // call useAuth()
+    // bind useAuth()
     const { isLoggedIn, user } = useAuth();
 
     // define function to handle add comment operation
