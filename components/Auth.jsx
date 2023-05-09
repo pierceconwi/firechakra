@@ -41,7 +41,7 @@ const Auth = () => {
         <Center>
         <Box display="flex" alignItems="center" justifyContent="space-between">
             <Box>
-            <Image 
+            <Link href="/"><Image 
                 borderRadius='full'
                 w={[
                     "60px",
@@ -52,7 +52,7 @@ const Auth = () => {
                 ]}
                 src='/fc-logo.png'
                 alt='FireChakra logo'
-                />
+                /></Link>
             </Box>
             <Box>
                 <Button variant="outline" id="home" size={['xs', 'sm', 'md', 'md', 'md']}>
