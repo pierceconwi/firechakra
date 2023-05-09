@@ -56,29 +56,29 @@ const Auth = () => {
                 /></Link>
             </Box>
             <Box>
-                <Button variant="outline" id="home" size={['sm', 'sm', 'md', 'md', 'md']}>
+                <Button variant="ghost" id="home" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Home</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="task" size={['sm', 'sm', 'md', 'md', 'md']}>
+                <Button variant="ghost" id="task" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Task</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="event" size={['sm', 'sm', 'md', 'md', 'md']}>
+                <Button variant="ghost" id="event" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Event</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="contact" size={['sm', 'sm', 'md', 'md', 'md']}>
+                <Button variant="ghost" id="contact" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Contact</Link>
                 </Button>
             </Box>
             <Box>
                 {isLoggedIn && (
                     <>
-                            <Button variant="outline" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
+                            <Button variant="ghost" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
                                 <Link onClick={() => byeBye()} fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
                                 Logout
                                 </Link>
@@ -86,7 +86,7 @@ const Auth = () => {
                     </>
                 )}
                 {!isLoggedIn && (
-                    <Button variant="outline" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
+                    <Button variant="ghost" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
                         <Link onClick={() => handleAuth()} fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Login</Link>
                     </Button>
                     

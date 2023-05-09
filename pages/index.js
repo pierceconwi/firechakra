@@ -3,15 +3,13 @@ import Auth from "../components/Auth";
 import TodoList from "../components/TodoList";
 import CommentList from "../components/CommentList";
 import EventList from "../components/EventList";
+import Footer from '../components/Footer';
 import { ColorModeScript } from "@chakra-ui/color-mode";
 import theme from "../api/theme";
-
-
 
 export default function Home() {
     return (
         <Container 
-        bg="gray.300"
             maxW="7xl" 
             w={[
                 '100%',
@@ -53,6 +51,7 @@ export default function Home() {
             />
             {/* Saved Contact List Component */}
             <CommentList />
+            <Footer />
         </Container>
     );
 }

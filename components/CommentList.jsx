@@ -84,8 +84,12 @@ const CommentList = () => {
     // define the jsx for the component
     return (
         <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-            <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>
-                Contacts
+            <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Contacts<Badge>
+                    <AtSignIcon
+                        w="15px"
+                        h="15px"
+                    />
+                </Badge>
             </Heading>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                 {
@@ -103,17 +107,7 @@ const CommentList = () => {
                                 bg="gray.100"
                             >
                                 <Heading as="h3" fontSize={"xl"}>
-                                    <LinkOverlay href={`/comment/${comment.id}`} ml="6px">{comment.title}</LinkOverlay>
-                                    <Badge
-                                        float="left"
-                                        mt="3px"
-                                        mr="1px"
-                                    >
-                                        <AtSignIcon
-                                            w="15px"
-                                            h="15px"
-                                        />
-                                    </Badge>
+                                    <LinkOverlay href={`/comment/${comment.id}`}>{comment.title}</LinkOverlay>
                             </Heading>
                             <Text                            
                                 fontSize={[
@@ -123,7 +117,6 @@ const CommentList = () => {
                                     "1rem",
                                     "1.2rem"
                                 ]}
-                                ml="30px"
                             >
                                 { comment.comment }
                             </Text>
@@ -135,7 +128,6 @@ const CommentList = () => {
                                     "1rem",
                                     "1.2rem"
                                 ]}
-                                ml="30px"
                             >
                                 { comment.phone }
                             </Text>
@@ -147,7 +139,6 @@ const CommentList = () => {
                                     "1rem",
                                     "1.2rem"
                                 ]}
-                                ml="30px"
                             >
                                 { comment.email }
                             </Text>

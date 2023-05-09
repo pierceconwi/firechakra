@@ -50,7 +50,12 @@ import {
         
         return (
             <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-                <Heading fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Tasks</Heading>
+                <Heading fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Tasks                <Badge>
+                    <EditIcon 
+                    w="15px"
+                    h="15px"
+                    />
+                </Badge></Heading>
                 <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
                     {todos &&
                     todos.map((todo) => (
@@ -65,16 +70,7 @@ import {
                             bg="gray.100"
                         >
                         <Heading as="h3" mb="3px" fontSize={['1.4em', '1.2em', '1em', '1em', '1em']}>
-                        <LinkOverlay href={`/todo/${todo.id}`} ml="6px">{todo.title}{" "}</LinkOverlay>
-                            <Badge
-                                float="left"
-                                mt="3px"
-                            >
-                                <EditIcon 
-                                w="15px"
-                                h="15px"
-                                />
-                            </Badge> 
+                        <LinkOverlay href={`/todo/${todo.id}`}>{todo.title}{" "}</LinkOverlay>
                         </Heading>
                         <Text 
                             fontSize={[
@@ -84,7 +80,6 @@ import {
                                 "1rem",
                                 "1.2rem"
                             ]}
-                            ml="30px"
                         >{todo.description}</Text>
                     </Box>
                     </LinkBox>
