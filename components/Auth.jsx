@@ -50,46 +50,46 @@ const Auth = () => {
                     "80px",
                     "90px"
                 ]}
+                minW="45px"
                 src='/fc-logo.png'
                 alt='FireChakra logo'
                 /></Link>
             </Box>
             <Box>
-                <Button variant="outline" id="home" size={['xs', 'sm', 'md', 'md', 'md']}>
+                <Button variant="outline" id="home" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Home</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="task" size={['xs', 'sm', 'md', 'md', 'md']}>
+                <Button variant="outline" id="task" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-todo" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Task</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="event" size={['xs', 'sm', 'md', 'md', 'md']}>
+                <Button variant="outline" id="event" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-event" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Event</Link>
                 </Button>
             </Box>
             <Box>
-                <Button variant="outline" id="contact" size={['xs', 'sm', 'md', 'md', 'md']}>
+                <Button variant="outline" id="contact" size={['sm', 'sm', 'md', 'md', 'md']}>
                     <Link href="/add-comment" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Contact</Link>
                 </Button>
             </Box>
             <Box>
                 {isLoggedIn && (
                     <>
-                        <Center>
-                        <Link color="red.400" onClick={() => byeBye()} >
-                            <Button colorScheme="red" mr="5%" size={['xs', 'sm', 'md', 'md', 'md']}>
-                            Logout
+                            <Button variant="outline" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
+                                <Link onClick={() => byeBye()} fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+                                Logout
+                                </Link>
                             </Button>
-                        </Link>
-                        </Center>
                     </>
                 )}
                 {!isLoggedIn && (
-                    <Button leftIcon={<FaGoogle />} onClick={() => handleAuth()} colorScheme="green" mr="5%" size={['xs', 'sm', 'md', 'md', 'md']}>
-                        Login
+                    <Button variant="outline" mr="5%" size={['sm', 'sm', 'md', 'md', 'md']}>
+                        <Link onClick={() => handleAuth()} fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>Login</Link>
                     </Button>
+                    
                 )}
             </Box>
         </Box>
