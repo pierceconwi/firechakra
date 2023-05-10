@@ -1,6 +1,7 @@
 import React from "react";
 import useAuth from "../../hooks/useAuth";
 import Auth from "../../components/Auth";
+import Footer from '../../components/Footer';
 import {
     Box,
     Heading,
@@ -159,6 +160,7 @@ const EventItem = ( {itemData} ) => {
                 >Delete Event</Button>
             </Center>
         </Box>
+        <Footer />
     </Container>
     );
 };

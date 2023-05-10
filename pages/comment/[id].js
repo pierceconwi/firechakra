@@ -1,6 +1,7 @@
 import React from "react";
 import useAuth from "../../hooks/useAuth";
 import Auth from "../../components/Auth";
+import Footer from '../../components/Footer';
 import {
     Box,
     Heading,
@@ -182,6 +183,7 @@ const ContactItem = ( {itemData} ) => {
                 >Delete Contact</Button>
             </Center>
         </Box>
+        <Footer />
     </Container>
     );
 };
