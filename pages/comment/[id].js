@@ -103,11 +103,14 @@ const ContactItem = ( {itemData} ) => {
     >
         <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
             <Auth />
-            <Box boxShadow="base"  p={3}
-                            shadow={"base"}
-                            transition="0.2s"
-                            _hover={{ boxShadow: "sm" }}
-                            borderRadius="md" ml="25%" mr="25%">
+            <Box 
+                boxShadow="base"  
+                p={3}        
+                shadow={"base"}    
+                transition="0.2s"
+                _hover={{ boxShadow: "sm" }}
+                borderRadius="md" mx={["1%", "7%", "12%", "25%", "25%"]}
+            >
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
                     <Badge  bg="white">
@@ -130,7 +133,7 @@ const ContactItem = ( {itemData} ) => {
                 <br />
             </Box>
             <br />
-            <Accordion ml="25%" mr="25%">
+            <Accordion mx={["1%", "7%", "12%", "25%", "25%"]}>
                 <AccordionItem>
                 <AccordionButton>
                     <Center  h={["50px"]} w={["8000px"]}>
