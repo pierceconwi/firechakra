@@ -178,7 +178,7 @@ const ContactItem = ( {itemData} ) => {
                     onClick={ () => handleContactDelete(itemData.id) } 
                     bg="red.500"
                     color="white"
-                    mt="15px"
+                    my="15px"
                     variant="solid"
                 >Delete Contact</Button>
             </Center>

@@ -155,7 +155,7 @@ const EventItem = ( {itemData} ) => {
                     onClick={ () => handleEventDelete(itemData.id) } 
                     bg="red.500"
                     color="white"
-                    mt="15px"
+                    my="15px"
                     variant="solid"
                 >Delete Event</Button>
             </Center>
