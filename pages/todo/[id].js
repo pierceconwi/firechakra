@@ -98,7 +98,6 @@ const TodoItem = ( {itemData} ) => {
         <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
             <Auth />
             <Box boxShadow="base"  p={3}
-                            boxShadow="2xl"
                             shadow={"base"}
                             transition="0.2s"
                             _hover={{ boxShadow: "sm" }}
