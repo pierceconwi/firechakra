@@ -50,7 +50,7 @@ import {
         
         return (
             <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-                <Heading fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Tasks                <Badge>
+                <Heading fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Tasks<Badge  bg="white">
                     <EditIcon 
                     w="15px"
                     h="15px"
@@ -63,11 +63,10 @@ import {
                         <Box
                             p={3}
                             boxShadow="2xl"
-                            shadow={"dark-lg"}
+                            shadow={"base"}
                             transition="0.2s"
                             _hover={{ boxShadow: "sm" }}
                             borderRadius="md"
-                            bg="gray.100"
                         >
                         <Heading as="h3" mb="3px" fontSize={['1.4em', '1.2em', '1em', '1em', '1em']}>
                         <LinkOverlay href={`/todo/${todo.id}`}>{todo.title}{" "}</LinkOverlay>

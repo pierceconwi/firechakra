@@ -86,7 +86,7 @@ const EventItem = ( {itemData} ) => {
             <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
-                    <Badge>
+                    <Badge  bg="white">
                         <CalendarIcon 
                             w="15px"
                             h="15px"

@@ -84,7 +84,7 @@ const CommentList = () => {
     // define the jsx for the component
     return (
         <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-            <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Contacts<Badge>
+            <Heading mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Contacts<Badge bg="white">
                     <AtSignIcon
                         w="15px"
                         h="15px"
@@ -98,13 +98,12 @@ const CommentList = () => {
                         (comment) => (
                             <LinkBox key={comment.id}>
                             <Box
-                                p={3}
-                                boxShadow="2xl"
-                                shadow={"dark-lg"}
-                                transition="0.2s"
-                                _hover={{ boxShadow: "sm" }}
-                                borderRadius="md"
-                                bg="gray.100"
+                            p={3}
+                            boxShadow="2xl"
+                            shadow={"base"}
+                            transition="0.2s"
+                            _hover={{ boxShadow: "sm" }}
+                            borderRadius="md"
                             >
                                 <Heading as="h3" fontSize={"xl"}>
                                     <LinkOverlay href={`/comment/${comment.id}`}>{comment.title}</LinkOverlay>

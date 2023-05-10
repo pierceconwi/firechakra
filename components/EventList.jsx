@@ -59,7 +59,7 @@ import {
         
         return (
             <Box px={['5px', '5px', '10px', '10px', '10px']} mt={5} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
-                <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Events<Badge>
+                <Heading  mb="3px" fontSize={['1.2em', '1.2em', '1.2em', '1.2em', '1.4em']}>Events<Badge  bg="white">
                         <CalendarIcon 
                             w="15px"
                             h="15px"
@@ -72,11 +72,10 @@ import {
                         <Box
                             p={3}
                             boxShadow="2xl"
-                            shadow={"dark-lg"}
+                            shadow={"base"}
                             transition="0.2s"
                             _hover={{ boxShadow: "sm" }}
                             borderRadius="md"
-                            bg="gray.100"
                         >
                         <Heading as="h3" fontSize={"xl"}>
                         <LinkOverlay href={`/event/${event.id}`}>{event.title}{" "}</LinkOverlay>
