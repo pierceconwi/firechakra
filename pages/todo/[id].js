@@ -95,7 +95,7 @@ const TodoItem = ( {itemData} ) => {
         borderRadius="md" 
         border="dashed black 1px"
     >
-        <Box px={['5px', '5px', '10px', '10px', '10px']} textAlign="center" fontSize={['0.8em', '1em', '1.2em', '1.4em', '1.6em']}>
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
             <Auth />
             <Box boxShadow="base"  p={3}
                             boxShadow="2xl"

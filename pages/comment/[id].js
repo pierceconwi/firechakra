@@ -15,6 +15,7 @@ import {
     AccordionButton,
     AccordionPanel,
     Center,
+    Container,
     Badge
 } from "@chakra-ui/react";
 import { AtSignIcon } from '@chakra-ui/icons'
@@ -87,9 +88,26 @@ const ContactItem = ( {itemData} ) => {
     // if code hits here, user is logged in
     // return the jsx component
     return (
-        <Box ml="3%" mr="3%">
-            <Auth/>
-            <Box mt={5} padding="10px" textAlign="center" boxShadow="base" ml="25%" mr="25%" borderRadius="md" bg="white">
+        <Container 
+        maxW="7xl" 
+        w={[
+            '100%',
+            '100%',
+            '75%',
+            '75%'
+        ]} 
+        p="0px"
+        borderRadius="md" 
+        border="dashed black 1px"
+    >
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
+            <Auth />
+            <Box boxShadow="base"  p={3}
+                            boxShadow="2xl"
+                            shadow={"base"}
+                            transition="0.2s"
+                            _hover={{ boxShadow: "sm" }}
+                            borderRadius="md" ml="25%" mr="25%">
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
                     <Badge  bg="white">
@@ -165,6 +183,7 @@ const ContactItem = ( {itemData} ) => {
                 >Delete Contact</Button>
             </Center>
         </Box>
+    </Container>
     );
 };
 

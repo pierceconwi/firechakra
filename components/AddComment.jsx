@@ -71,7 +71,7 @@ const AddComment = () => {
                 status: "success"
             }
         );
-        await new Promise(r => setTimeout(r, 1500));
+        await new Promise(r => setTimeout(r, 1000));
         window.location.assign("/");
     };
     // return markup for comment jsx component
