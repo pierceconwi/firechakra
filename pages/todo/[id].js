@@ -96,7 +96,7 @@ const TodoItem = ( {itemData} ) => {
         borderRadius="md" 
         border="dashed black 1px"
     >
-        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%" textAlign="center">
             <Auth />
             <Box 
                 boxShadow="base"  
@@ -108,19 +108,19 @@ const TodoItem = ( {itemData} ) => {
             >
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
+                    { itemData.title }
                     <Badge  bg="white">
                         <EditIcon 
                             w="15px"
                             h="15px"
                         />
                     </Badge> 
-                    Title: { itemData.title }
                 </Heading>
                 <Text>
-                    Description: { itemData.description }
+                    { itemData.description }
                 </Text>
                 <Text>
-                    Status: { itemData.status }
+                    { itemData.status }
                 </Text>
             </Box>
             <br />

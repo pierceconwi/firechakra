@@ -101,7 +101,7 @@ const ContactItem = ( {itemData} ) => {
         borderRadius="md" 
         border="dashed black 1px"
     >
-        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%">
+        <Box w={["450px", "500px", "800px", "1000px", "1300px"]} margin={"0 auto"} display="block" maxW="100%" textAlign="center">
             <Auth />
             <Box 
                 boxShadow="base"  
@@ -113,22 +113,22 @@ const ContactItem = ( {itemData} ) => {
             >
                 <br />
                 <Heading as="h3" fontSize={"xl"}>
+                    { itemData.title }
                     <Badge  bg="white">
                         <AtSignIcon 
                             w="15px"
                             h="15px"
                         />
                     </Badge>
-                    Title: { itemData.title }
                 </Heading>
                 <Text>
-                    Description: { itemData.comment }
+                    { itemData.comment }
                 </Text>
                 <Text>
-                    Phone: { itemData.phone }
+                    { itemData.phone }
                 </Text>
                 <Text>
-                    Email: { itemData.email }
+                    { itemData.email }
                 </Text>
                 <br />
             </Box>
