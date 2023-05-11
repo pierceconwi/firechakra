@@ -13,6 +13,7 @@ export default function AddEvents() {
                 '75%',
                 '75%'
             ]} 
+            minHeight={["800px", "0px"]}
             p="0px"
             borderRadius="md" 
             border="dashed black 1px"
